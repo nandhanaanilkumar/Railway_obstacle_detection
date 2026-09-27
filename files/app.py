@@ -163,7 +163,7 @@ st.markdown("""
 # 2. LOAD THE YOLO MODEL
 # ──────────────────────────────────────────────
 
-MODEL_PATH = "best.pt"
+MODEL_PATH = "files/best.pt"
 
 
 @st.cache_resource
