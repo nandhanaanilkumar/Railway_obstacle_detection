@@ -13,7 +13,11 @@ import numpy as np
 import os
 import tempfile
 from PIL import Image
+import ultralytics
+import torch
 from ultralytics import YOLO
+st.write("Ultralytics version:", ultralytics.__version__)
+st.write("PyTorch version:", torch.__version__)
 
 # Import our detection helper functions
 from detector import (
@@ -163,7 +167,7 @@ st.markdown("""
 # 2. LOAD THE YOLO MODEL
 # ──────────────────────────────────────────────
 
-MODEL_PATH = "files/best.pt"
+MODEL_PATH = "best.pt"
 
 
 @st.cache_resource
