@@ -206,7 +206,7 @@ with st.sidebar:
     st.markdown("### 📋 Model Information")
     st.markdown(f"""
     - **Model:** YOLOv8
-    - **Weights:** `{MODEL_PATH}`
+    - **Weights:** best.pt
     - **Mode:** Inference only
     - **Classes:** {', '.join(model.names.values())}
     """)

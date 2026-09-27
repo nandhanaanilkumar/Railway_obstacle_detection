@@ -14,10 +14,10 @@ from collections import deque
 # ──────────────────────────────────────────────
 
 CONF_THRESH = 0.20          # YOLO minimum confidence to keep a detection
-OVERLAP_THRESH = 0.35       # fraction of object's lower region that must be inside the ROI
-BOTTOM_FRACTION = 0.4       # 0.4 = use the bottom 60% of each bounding box for the overlap check
+OVERLAP_THRESH = 0.25       # fraction of object's lower region that must be inside the ROI
+BOTTOM_FRACTION = 0.4                      # 0.4 = use the bottom 60% of each bounding box for the overlap check
 YOLO_IMGSZ = 960            # image size passed to YOLO for inference
-YOLO_AUGMENT = True         # test-time augmentation
+YOLO_AUGMENT = False        # test-time augmentation
 SMOOTHING_WINDOW = 5        # number of past frames to remember for video smoothing
 
 # Classes that should NEVER count as obstacles (empty by default — see tuning guide in Colab)
@@ -230,6 +230,7 @@ def detect_obstacles(frame, model, roi_points,
     results = model.predict(
         frame,
         conf=conf_thresh,
+        iou=0.40,
         imgsz=YOLO_IMGSZ,
         augment=YOLO_AUGMENT,
         verbose=False
