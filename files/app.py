@@ -512,19 +512,15 @@ elif mode == "🎥 Video":
                         unsafe_allow_html=True
                     )
 
-                # Show the processed video
-                st.markdown("### 🎬 Processed Video")
+                
 
                 if os.path.exists(output_video_path):
                     # Try to display the video directly
-                    try:
-                        with open(output_video_path, "rb") as video_file:
+                    with open(output_video_path, "rb") as video_file:
                             video_bytes = video_file.read()
 
-                        st.video(video_bytes)
-                    except Exception:
-                        st.warning("⚠️ Could not preview the video in the browser. Please use the download button below.")
-
+                        
+                    
                     # Download button
                     st.download_button(
                         label="📥 Download Processed Video",
